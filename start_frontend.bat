@@ -1,0 +1,9 @@
+@echo off
+echo Starting PixelPaw Frontend...
+cd /d "%~dp0\frontend"
+if not exist node_modules (
+    echo Installing dependencies...
+    npm install
+)
+echo Starting development server...
+npm run dev

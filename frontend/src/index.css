@@ -1,0 +1,123 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* PixelPaw Pastel Theme - Warm, Calming Sanctuary */
+    --background: 40 20% 96%;
+    --foreground: 0 0% 27%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 27%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 27%;
+
+    /* Mint Green - Primary healing color */
+    --primary: 163 35% 75%;
+    --primary-foreground: 0 0% 20%;
+    --primary-glow: 163 45% 85%;
+
+    /* Soft Lavender - Secondary calm color */
+    --secondary: 280 30% 88%;
+    --secondary-foreground: 0 0% 27%;
+    --secondary-glow: 280 40% 92%;
+
+    --muted: 40 20% 94%;
+    --muted-foreground: 0 0% 50%;
+
+    /* Warm Peach - Accent for joy */
+    --accent: 30 100% 80%;
+    --accent-foreground: 0 0% 27%;
+    --accent-glow: 30 100% 88%;
+
+    --destructive: 0 70% 70%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 40 15% 90%;
+    --input: 40 15% 92%;
+    --ring: 163 35% 75%;
+
+    --radius: 1rem;
+
+    /* Gradients for mood-based backgrounds */
+    --gradient-calm: linear-gradient(135deg, hsl(163, 35%, 90%) 0%, hsl(280, 30%, 92%) 100%);
+    --gradient-happy: linear-gradient(135deg, hsl(30, 100%, 88%) 0%, hsl(163, 45%, 88%) 100%);
+    --gradient-zen: linear-gradient(180deg, hsl(280, 30%, 94%) 0%, hsl(163, 25%, 94%) 100%);
+
+    /* Shadows with soft glow */
+    --shadow-soft: 0 4px 20px hsla(163, 35%, 75%, 0.15);
+    --shadow-glow: 0 0 30px hsla(163, 45%, 85%, 0.3);
+    --shadow-accent: 0 0 25px hsla(30, 100%, 80%, 0.25);
+
+    /* Animation timing */
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+
+  /* Floating animation for peaceful elements */
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @keyframes glow-pulse {
+    0%, 100% {
+      box-shadow: var(--shadow-glow);
+    }
+    50% {
+      box-shadow: 0 0 40px hsla(163, 45%, 85%, 0.5);
+    }
+  }
+
+  @keyframes gentle-bounce {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+  }
+
+  .float-animation {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .glow-pulse {
+    animation: glow-pulse 2s ease-in-out infinite;
+  }
+
+  .gentle-bounce {
+    animation: gentle-bounce 0.6s ease-in-out;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
